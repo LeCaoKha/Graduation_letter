@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    background: #eceeea;
+    color-scheme: light;
+  }
+}

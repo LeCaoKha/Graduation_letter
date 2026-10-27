@@ -1,0 +1,78 @@
+:root {
+  --paper: #eceeea;
+  --ink: #111412;
+  --muted: #474d48;
+  --accent: #ff4f1f;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --font-sans: "Geist", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: light;
+}
+
+html {
+  background: var(--paper);
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+.invite h1,
+.invite h2 {
+  text-wrap: balance;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* Hiệu ứng xuất hiện: chỉ dùng opacity + transform */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.45s var(--ease-out),
+    transform 0.45s var(--ease-out);
+  transition-delay: var(--d, 0ms);
+}
+.reveal[data-in="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+.btn {
+  transition:
+    transform 0.16s var(--ease-out),
+    background-color 0.16s var(--ease-out),
+    color 0.16s var(--ease-out);
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transform: none;
+    transition: opacity 0.2s linear;
+    transition-delay: 0ms;
+  }
+  .btn {
+    transition: none;
+  }
+  .btn:active {
+    transform: none;
+  }
+}
