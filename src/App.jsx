@@ -265,7 +265,8 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#1c1c1c] py-6 px-3 flex justify-center items-start font-['Quicksand',sans-serif] antialiased text-black">
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#1c1c1c] py-6 px-3 flex justify-center items-start font-['Quicksand',sans-serif] antialiased text-black">
+      {" "}
       {/* Google Fonts Import */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Luxurious+Script&family=Oswald:wght@500;600&family=Quicksand:wght@400;500;600;700&display=swap');
@@ -286,13 +287,37 @@ const App = () => {
         .font-quick {
           font-family: 'Quicksand', sans-serif;
         }
-      `}</style>
+          
+        /* ====== MOBILE RESPONSIVE ====== */
 
+        @media (max-width: 480px) {
+
+          html,
+          body,
+          #root {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+          }
+
+          *,
+          *::before,
+          *::after {
+            box-sizing: border-box;
+          }
+
+          img {
+            max-width: 100%;
+          }
+
+        }
+
+      `}</style>
       {/* KHUNG THIỆP CHÍNH Ở GIỮA */}
-      <main className="w-full max-w-[470px] bg-white shadow-2xl relative overflow-hidden py-10 flex flex-col items-center">
+      <main className="w-full min-w-0 max-w-[470px] bg-white shadow-2xl relative overflow-hidden py-10 flex flex-col items-center">
         {/* 1. Graduation Ceremony Header */}
         <Reveal className="relative mt-2">
-          <h1 className="relative z-10 font-league text-6xl text-black tracking-wider">
+          <h1 className="relative z-10 font-league text-[clamp(2.5rem,11vw,3.75rem)] text-black tracking-wider whitespace-nowrap">
             Graduation Ceremony
           </h1>
 
