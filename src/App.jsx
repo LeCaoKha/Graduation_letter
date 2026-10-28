@@ -13,7 +13,7 @@ import underlineImg from "./assets/xac nhan tham du underline.png";
 const CONFIG = {
   firstLine: "Lê Cao",
   lastLine: "Kha",
-  date: "2026-11-07T08:00:00+07:00",
+  date: "2026-11-07T16:00:00+07:00",
   venue: "Sân trường Đại học FPT TPHCM",
   address:
     "Lô E2a-7, Đường D1, Khu Công nghệ cao, Phường Tăng Nhơn Phú, TP. Hồ Chí Minh",
@@ -435,15 +435,15 @@ const App = () => {
           delay={400}
           className="w-[60%] mt-10 border border-[#FBE264] rounded-2xl p-4 bg-white shadow-xs text-center space-y-1"
         >
-          <p className="font-quick text-xs font-bold uppercase tracking-wide text-black">
+          <p className="font-quick text-sm font-bold uppercase tracking-wide text-black">
             Thông tin liên hệ
           </p>
 
-          <p className="font-quick text-xs text-gray-700">
+          <p className="font-quick text-sm mt-3 text-gray-700">
             SĐT: <span className="font-bold">{CONFIG.phone}</span>
           </p>
 
-          <p className="font-quick text-xs text-gray-700">
+          <p className="font-quick text-sm text-gray-700">
             Facebook:{" "}
             <a
               href="https://www.facebook.com/cao.kha.202437"
